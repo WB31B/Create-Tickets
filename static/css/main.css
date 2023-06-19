@@ -4,6 +4,16 @@ body {
     box-sizing: border-box;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -34,6 +44,37 @@ a {
 .container__create:hover {
     background-color: darkslategrey;
     color: white;
+}
+
+/* Header */
+.container__header {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    background-color: darkslategrey;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__item {
+    color: white;
+    font-size: 24px;
+    padding: 15px 10px;
+    transition: 0.2s linear;
+}
+
+.nav__item:hover {
+    background-color: white;
+    color: black;
 }
 
 /* Form */
@@ -104,7 +145,7 @@ a {
     width: 100%;
     margin: 0 auto;
 
-    height: 100vh;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -123,6 +164,7 @@ a {
     margin-bottom: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 20px;
+    position: relative;
 }
 
 .ticket__info-top {
@@ -144,28 +186,40 @@ a {
     margin-bottom: 5px;
 }
 
+.ticket-item:last-child {
+    margin-bottom: 40px;
+}
+
 .container__link {
     display: block;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border-radius: 10px;
-    margin-top: 15px;
     padding: 5px 5px 5px 10px;
     color: black;
     transition: 0.2s linear;
     font-size: 14px;
+    position: absolute;
+    bottom: 10px;
 }
 
-.tickets-back {
+.container__tickets-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container__tickets-btn a {
     display: block;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border-radius: 10px;
-    margin-top: 15px;
     color: black;
     transition: 0.2s linear;
     text-align: center;
-    width: 30%;
     font-size: 24px;
     padding: 10px 0;
+    width: 30%;
+    margin: 0 10px;
 }
 
 .container__link:hover, .tickets-back:hover {
@@ -213,4 +267,59 @@ a {
 .ticket-back:hover {
     background-color: darkslategrey;
     color: white;
+}
+
+/* Pagination */
+.container__pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-page {
+    background-color: darkslategrey;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    font-size: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+}
+
+.pagination-item-l {
+    border-radius: 10px 0 0 10px;
+}
+
+.pagination-item-r {
+    border-radius: 0 10px 10px 0;
+}
+
+.pagination-item {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    color: black;
+    transition: 0.2s linear;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0;
+    width: 30%;
+}
+
+.pagination-item:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+.container__total-page {
+    background-color: darkslategrey;
+    color: white;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
 }
