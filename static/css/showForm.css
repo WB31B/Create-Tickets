@@ -1,0 +1,72 @@
+.container__create {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.create-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.create__item {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.create-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 50%;
+    padding: 10px 0;
+    margin: 10px;
+}
+
+.create-style:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+.style-button {
+    transition: 0.2s linear;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 50%;
+    border: none;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.form-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.style-button:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+.style-input {
+    width: 50%;
+    border: none;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}

@@ -1,0 +1,119 @@
+.container__tickets {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ticket__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket-info {
+    width: 200px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.ticket__info-top {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.ticket-number {
+    font-size: 14px;
+}
+
+.ticket-info div span, .ticket__info div span, .ticket-number {
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+.ticket-item {
+    margin-bottom: 5px;
+}
+
+.ticket-item:last-child {
+    margin-bottom: 40px;
+}
+
+.container__link {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px;
+    padding: 5px 5px 5px 10px;
+    color: black;
+    transition: 0.2s linear;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.container__tickets-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container__tickets-btn a {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px;
+    color: black;
+    transition: 0.2s linear;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0;
+    width: 30%;
+    margin: 0 10px;
+}
+
+.container__link:hover, .tickets-back:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+.container__tickets-form {
+    display: flex;
+    justify-content: center;
+}
+
+.container__tickets-form input {
+    border: 1px solid darkslategrey;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 15px;
+}
+
+.container__tickets-form button {
+    cursor: pointer;
+    border: none;
+    background-color: darkslategrey;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+.container__top {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__top-item {
+    margin: 0 10px;
+}

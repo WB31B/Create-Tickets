@@ -1,0 +1,25 @@
+.container__create__ticket {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create__ticket {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 50px;
+    height: 50px;
+    transition: 0.2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    border-radius: 50%;
+    transition: 0.2s linear;
+}
+
+.create__ticket:hover {
+    background-color: darkslategrey;
+    color: white;
+}
