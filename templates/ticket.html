@@ -1,0 +1,32 @@
+{{ define "ticket" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/ticket.css">
+    <title>Ticket</title>
+</head>
+<body>
+    <div class="container__ticket">
+        <div class="ticket__info">
+            <div class="ticket__number">Ticket #{{ .Id }}</div>
+            <div class="ticket-item ticket__username">
+                <span>Username: </span>{{ .Username }}
+            </div>
+            <div class="ticket-item ticket__information">
+                <span>Information: </span>{{ .Information }}
+            </div>
+            <div class="ticket-item ticket__ticket">
+                <span>Ticket: </span>{{ .Ticket }}
+            </div>
+            <a class="ticket-back" href="/tickets/">Back</a>
+        </div>
+    </div>
+</body>
+</html>
+
+{{ end }}

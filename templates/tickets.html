@@ -1,0 +1,67 @@
+{{ define "tickets" }}
+
+{{ template "header" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/tickets.css">
+    <link rel="stylesheet" href="/static/css/pagination.css">
+    <title>Tickets</title>
+</head>
+<body>
+    <div class="container__tickets">
+        <div class="container__top">
+            <div class="container__title container__top-item">Tickets: {{ .CountTickets }}</div>
+            <div class="container__search container__top-item">
+                <form class="container__tickets-form" action="#" method="GET">
+                    <input type="text" name="filter" placeholder="Search Tickets">
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+        </div>
+        <div class="ticket__items">
+        {{ range .Article }}
+            <div class="ticket-info">
+                <div class="ticket__info-top">
+                    <div class="ticket-item">
+                        <span>Username: </span>{{ .Username }}
+                    </div>
+                    <div class="ticket-number">#{{ .Id }}</div>
+                </div>
+                <div class="ticket-item">
+                    <span>Information: </span>{{ .Information }}</div>
+                <div class="ticket-item">
+                    <span>Ticket: </span>{{ .Ticket }}</div>
+                <div class="ticket-item">
+                    <a class="container__link" href="/ticket/{{ .Id }}">Ticket Info...</a>
+                </div>
+            </div>
+        {{ else }}
+            <div class="container__lead">No Tickets!</div>
+        {{ end }}
+        </div>
+
+        <div class="container__pagination">
+            {{if gt .TotalPage 1}}
+                {{if gt .CurrentPage 1}}
+                    <a class="pagination-item pagination-item-l" href="{{printf `?page=%d` (minus .CurrentPage 1)}}">Previous</a>
+                {{end}}
+                <div class="pagination-page">{{ .CurrentPage }}</div>
+                {{if lt .CurrentPage .TotalPage}}
+                    <a class="pagination-item pagination-item-r" href="{{printf `?page=%d` (plus .CurrentPage 1)}}">Next</a>
+                {{end}}
+            {{end}}
+        </div>
+        <div class="container__total-page">
+            <p>Total pages: {{ .TotalPage }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{{ end }}
