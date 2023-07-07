@@ -1,0 +1,26 @@
+{{ define "index" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="container__index">
+        <div class="container__items">
+            <a href="/create_ticket" class="container__create">Create Ticket</a>
+            <a href="/show_tickets" class="container__create">Tickets</a>
+            <a href="/create_note" class="container__create">Create Note</a>
+            <a href="/show_notes" class="container__create">Notes</a>
+            <a href="/show_notes" class="n-r-block">...</a>
+        </div>
+    </div>
+</body>
+</html>
+
+{{ end }}
