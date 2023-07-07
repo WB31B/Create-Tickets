@@ -1,0 +1,26 @@
+{{ define "createNote" }}
+
+{{ template "header" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/createNote.css">
+    <title>Create Notes</title>
+</head>
+<body>
+    <div class="container__create__note">
+        <div class="container__title">Create #Note</div>
+        <form action="/save_note" method="post" class="form">
+            <input class="form-input" type="text" name="title" id="title" placeholder="Title">
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <button class="form__button">Post</button>
+        </form>
+    </div>
+</body>
+</html>
+
+{{ end }}
