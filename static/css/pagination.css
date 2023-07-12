@@ -1,0 +1,80 @@
+.container__pagination {
+    max-width: 700px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.pagination-page {
+    background-color: darkslategrey;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    font-size: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+}
+
+.pagination-item-l {
+    border-radius: 10px 0 0 10px;
+}
+
+.pagination-item-r {
+    border-radius: 0 10px 10px 0;
+}
+
+.pagination-item {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    color: black;
+    transition: 0.2s linear;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0;
+    width: 30%;
+}
+
+.pagination-item:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+.container__total-page {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.container__total {
+    background-color: darkslategrey;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid darkslategrey;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+}
+
+.last__page-total {
+    width: 10%;
+    margin-left: 0;
+    text-align: center;
+}
+
+.feik-container-page {
+    width: 10%; 
+}
+
+.feik-container-prev, .feik-container-next {
+    width: 30%;
+}
+
+.pagination-item-last {
+    width: 100px;
+    border-radius: 10px 10px 0 0;
+    margin-left: 10px;
+}
