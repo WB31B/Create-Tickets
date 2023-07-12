@@ -1,0 +1,27 @@
+{{ define "pagination" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/pagination.css">
+    <title>Pagination</title>
+</head>
+<body>
+    <div class="container__pagination">
+        {{if gt .TotalPage 1}}
+            {{if gt .CurrentPage 1}}
+                <a class="pagination-item pagination-item-l" href="{{printf `?page=%d` (minus .CurrentPage 1)}}">Previous</a>
+            {{end}}
+            <div class="pagination-page">{{ .CurrentPage }}</div>
+            {{if lt .CurrentPage .TotalPage}}
+                <a class="pagination-item pagination-item-r" href="{{printf `?page=%d` (plus .CurrentPage 1)}}">Next</a>
+                <a class="pagination-item pagination-item-last" href="?page={{.TotalPage}}">Last</a>
+            {{end}}
+        {{end}}
+    </div>
+</body>
+</html>
+
+{{ end }}
