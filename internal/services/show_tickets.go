@@ -55,17 +55,26 @@ func ShowTickets(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl, err := template.New("showTickets.html").Funcs(template.FuncMap{
+		"minus": minusTickets,
+		"plus":  plusTickets,
+	}).ParseFiles("templates/showTickets.html", "templates/header.html", "templates/pagination.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	tmplPag, err := template.New("pagination.html").Funcs(template.FuncMap{
 		"printf": func(format string, a ...interface{}) string {
 			return fmt.Sprintf(format, a...)
 		},
 		"minus": minusTickets,
 		"plus":  plusTickets,
-	}).ParseFiles("templates/showTickets.html", "templates/header.html")
+	}).ParseFiles("templates/pagination.html")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	tmpl.ExecuteTemplate(w, "show_tickets", page)
+	tmplPag.ExecuteTemplate(w, "pagination", page)
 }
 
 func minusTickets(a, b int) int {
