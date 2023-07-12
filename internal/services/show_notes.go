@@ -55,17 +55,26 @@ func ShowNotes(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl, err := template.New("showNotes.html").Funcs(template.FuncMap{
+		"minus": minusNotes,
+		"plus":  plusNotes,
+	}).ParseFiles("templates/showNotes.html", "templates/header.html", "templates/pagination.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	tmplPag, err := template.New("pagination.html").Funcs(template.FuncMap{
 		"printf": func(format string, a ...interface{}) string {
 			return fmt.Sprintf(format, a...)
 		},
-		"minus": minusNotes,
-		"plus":  plusNotes,
-	}).ParseFiles("templates/showNotes.html", "templates/header.html")
+		"minus": minusTickets,
+		"plus":  plusTickets,
+	}).ParseFiles("templates/pagination.html")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	tmpl.ExecuteTemplate(w, "show_notes", page)
+	tmplPag.ExecuteTemplate(w, "pagination", page)
 
 }
 
