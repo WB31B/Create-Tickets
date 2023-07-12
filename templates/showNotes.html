@@ -7,34 +7,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/pagination.css">
     <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="/static/css/tickets.css">
+    <link rel="stylesheet" href="/static/css/showList.css">
     <title>Notes</title>
 </head>
 <body>
-    <div class="container__tickets">
+    <div class="container__list">
         <div class="container__top">
             <div class="container__title container__top-item">Notes: {{ .CountTickets }}</div>
-            <div class="container__search container__top-item">
-                <form class="container__tickets-form" action="#" method="GET">
-                    <input type="text" name="filter" placeholder="Search Tickets">
-                    <button type="submit">Filter</button>
-                </form>
+            <div class="container__total-page">
+                <div class="container__total">Total pages: {{ .TotalPage }}</div>
             </div>
         </div>
-        <div class="ticket__items">
+        <div class="list__items">
         {{ range .Notes }}
-            <div class="ticket-info">
-                <div class="ticket__info-top">
-                    <div class="ticket-item">
+            <div class="list-info">
+                <div class="list__info-top">
+                    <div class="list-item">
                         <span>Title: </span>{{ .Title }}
                     </div>
-                    <div class="ticket-number">#{{ .Id }}</div>
+                    <div class="list-number">#{{ .Id }}</div>
                 </div>
-                <div class="ticket-item">
+                <div class="list-item">
                     <span>Description: </span>{{ .Description }}</div>
-                <div class="ticket-item">
+                <div class="list-item">
                     <a class="container__link" href="/note/{{ .Id }}">Notes Info...</a>
                 </div>
             </div>
@@ -42,33 +38,10 @@
             <div class="container__lead">No Tickets!</div>
         {{ end }}
         </div>
-
-        <div class="container__pagination">
-            {{if gt .TotalPage 1}}
-                {{if gt .CurrentPage 1}}
-                    <a class="pagination-item pagination-item-l" href="{{printf `?page=%d` (minus .CurrentPage 1)}}">Previous</a>
-                {{end}}
-                <div class="pagination-page">{{ .CurrentPage }}</div>
-                {{if lt .CurrentPage .TotalPage}}
-                    <a class="pagination-item pagination-item-r" href="{{printf `?page=%d` (plus .CurrentPage 1)}}">Next</a>
-                    <a class="pagination-item pagination-item-last" href="?page={{.TotalPage}}">Last</a>
-                {{end}}
-            {{end}}
-        </div>
-
-        <div class="container__total-page">
-            {{if lt .CurrentPage .TotalPage}}
-                <div class="feik-container-prev"></div>
-                <div class="feik-container-page"></div>
-                <div class="feik-container-next"></div>
-                <div class="container__total">Total pages: {{ .TotalPage }}</div>
-            {{ else }}
-                <div class="feik-container-prev"></div>
-                <div class="container__total last__page-total">Total pages: {{ .TotalPage }}</div>
-            {{ end }}
-        </div>
     </div>
 </body>
 </html>
+
+{{ template "pagination" }}
 
 {{ end }}
